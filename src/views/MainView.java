@@ -2,6 +2,11 @@ package views;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.dnd.DropTarget;
+import java.awt.dnd.DropTargetDragEvent;
+import java.awt.dnd.DropTargetDropEvent;
+import java.awt.dnd.DropTargetEvent;
+import java.awt.dnd.DropTargetListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
@@ -23,11 +28,13 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
-import model.Model;
-import util.Converter;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
+
+import util.Converter;
+
+import model.Model;
 
 public class MainView {
 	
@@ -176,6 +183,7 @@ public class MainView {
 			public void mouseClicked(MouseEvent arg0) {
 				int returnVal = chooser.showSaveDialog(null);
 				if(returnVal == JFileChooser.APPROVE_OPTION) {
+					System.out.println(chooser.getSelectedFile().getAbsoluteFile());
 					Converter.Format format;
 					
 					if(rdbtnHorizontal.isSelected()) {
@@ -210,6 +218,39 @@ public class MainView {
 		JLabel lblTemplate = new JLabel("Template");
 		lblTemplate.setBounds(16, 66, 61, 16);
 		panelSave.add(lblTemplate);
+		
+		new DropTarget(frame, new DropTargetListener() {
+			
+			@Override
+			public void dropActionChanged(DropTargetDragEvent dtde) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void drop(DropTargetDropEvent dtde) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void dragOver(DropTargetDragEvent dtde) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void dragExit(DropTargetEvent dte) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void dragEnter(DropTargetDragEvent dtde) {
+				// TODO Auto-generated method stub
+				
+			}
+		});
 		
 		frame.setVisible(true);
 	}
