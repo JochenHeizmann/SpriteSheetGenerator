@@ -262,10 +262,8 @@ public class MainView {
 						model.addFiles(files.toArray(f));
 
 					} catch (UnsupportedFlavorException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					} catch (IOException e) {
-						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
 				}
@@ -278,13 +276,11 @@ public class MainView {
 
 			@Override
 			public void dragExit(DropTargetEvent dte) {
-				// TODO Auto-generated method stub
 
 			}
 
 			@Override
 			public void dragEnter(DropTargetDragEvent dtde) {
-				// TODO Auto-generated method stub
 
 			}
 		});
