@@ -1,5 +1,4 @@
 Roadmap:
-
+- Scale Preview
 - Export-Report with template-system
-- Resolving heap-space problem
-- Drag and Drop Support
+- Resolve heap-space problem
